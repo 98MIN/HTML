@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+        
+       
+    <style>
+        #div{
+            text-align: center;
+        }
+        #div2{
+            display: none;
+        }
+         #div2 ul li{
+            list-style-type: none;
+            padding: 10px 10px 0 0;
+            color:cyan;
+        }
+    </style>
+    <script>
+       window.onload=function(){
+           var Btn=document.getElementById('btn');
+           var Div=document.getElementById('div2');
+           Btn.onclick=function(){
+               if(Div.style.display=='block'){
+                    Div.style.display='none';
+               }
+               else{
+                    Div.style.display='block';
+               }
+              
+           }
+       }
+    </script>
+</head>
+<body>
+    <div id="div">
+        <div id="div1">输入法<input type="button" value="v" id="btn"></div>
+        <div id="div2">
+        <ul>
+            <li>百度</li>
+            <li>搜狗</li>
+            <li>讯飞</li>
+        </ul>
+        </div>
+    </div>
+</body>
+</html>

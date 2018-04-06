@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #mod{
+            width: 300px;
+            height: 310px;
+            margin:50px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #ccc;
+        }
+        input{
+           margin: 10px 5px;
+           height: 20px;
+           font-size: 15px;
+        }
+        input[type=button]{
+            width: 200px;
+            height:40px;
+            margin-left:20%;
+            font-weight: bold;
+            border-radius: 8px;
+        }
+        h2{
+           width: 250px;
+           margin: 0 0 10px 0;
+           text-align: center;
+        }
+    </style>
+      <script>
+        window.onload=function(){
+           
+            var oTxta=document.getElementById('txt1');
+            var oTxtb=document.getElementById('txt2');
+            var oTxtc=document.getElementById('txt3');
+            var oTxtd=document.getElementById('txt4');
+            var oBtn=document.getElementById('btn');
+            var result;
+            var s;
+            oTxta.focus();
+           
+        oBtn.onclick=function(){
+            var radix=parseInt(oTxta.value);     //底数
+            var index=parseInt(oTxtb.value)      //指数
+            var biNum=index.toString(2);         //二进制
+            var divisor=parseInt(oTxtc.value)    //除数
+            result=Math.pow(radix,0);           
+            //实现方法
+            for(var i=0;i<biNum.length;i++){
+                s=biNum.substring(i,i+1);
+                if(s==1){
+                   result=Math.pow(result,2)*Math.pow(radix,1)%divisor; 
+                }
+                else{
+                    result=Math.pow(result,2)%divisor; 
+                }
+            }
+            if(isNaN(result)){
+                alert("请检查输入是否有误");
+            }
+            else{
+                 oTxtd.value=result;
+            }
+               
+            }
+
+            }
+            
+        </script>
+   
+</head>
+<body>
+    <div id="mod">
+        <div id="mod_txt">      
+            <h2>重复平方方法</h2>
+        底数：<input type="text" id="txt1" placeholder="请输入一个数作为底数"/><br/>
+        指数：<input type="text" id="txt2" placeholder="请输入一个数作为指数"/><br/>
+        模数：<input type="text" id="txt3" placeholder="请输入一个数作为模数"/><br/>
+        结果：<input type="text" id="txt4" /><br/>
+        <input type="button" id="btn" value="运算"/>
+    </div>
+    </div>
+</body>
+</html>

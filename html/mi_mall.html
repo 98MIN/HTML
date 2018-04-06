@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>小米商城</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+        }
+        .header{
+            width: 100%;
+            background-color: #333;
+            height: 40px;
+        }
+        .header .header_nav{
+            font-size: 10px;
+            font-weight: bold;
+            width: 1226px;
+            height: 40px;
+            margin: 0 auto;
+            color: #8b8b8b;
+          
+        }
+        .header .header_nav .header_nav_left{
+            width: 380px;
+            height: 40px;
+            float: left;
+        }
+        .header .header_nav .header_nav_left ul li{
+            padding-right: 10px;
+            list-style-type: none;
+            float: left;
+            height: 40px;
+            line-height: 40px;
+        }
+        .header .header_nav .header_nav_right{
+            float: right;
+            width: 280px;
+            height: 40px;
+        }
+        .header .header_nav .header_nav_right .right_ul{
+            width: 130px;
+            height: 40px;
+            line-height: 40px;
+            float: left;
+        }
+        .header .header_nav .header_nav_right .right_ul li{
+            list-style-type: none;
+            float: left;
+            height: 40px;
+            line-height: 40px;
+            padding-right: 10px;
+        }
+        .header .header_nav .header_nav_right .right_shopTrolley{
+            width: 120px;
+            height: 40px;
+            line-height: 40px;
+            float: right;
+            background-color: #424242;
+        }
+        .header .header_nav .header_nav_right .right_shopTrolley img{
+            width: 20px;
+            height: 20px;
+            vertical-align: middle;
+            padding-left: 20px;
+        }
+        .header .header_nav .header_nav_right .right_shopTrolley span{
+            padding:0 15px 0 5px;
+        }
+
+        .main{
+            width: 1226px;
+            margin: 0 auto;       
+        }
+        .main .main_nav{
+            width: 1226px;
+            height: 100px;
+            font-weight: bold;
+            font-size: 10px;   
+            display: flex;
+            justify-content: space-between;
+        }
+        .main .main_nav .main_nav_img{
+            width: 55px;
+            /* height: 100px; */
+            line-height: 100px;
+        }
+        .main .main_nav .main_nav_img img{
+
+            width:  55px;
+            height: 55px;
+            /* 图片在div里面居中 */
+           
+            vertical-align: middle;
+        }
+        .main .main_nav .main_nav_list{
+            width: 595px;
+            /* height: 100px; */
+            line-height: 100px;
+        }
+        .main .main_nav .main_nav_list li{
+            list-style-type: none;
+            float: left;
+            padding-right: 15px;
+        }
+        .main .main_nav .main_nav_search{
+            width: 292px;
+            height: 100px;
+            line-height: 100px;
+        }
+        .main .main_nav .main_nav_search input[type=text]{
+            height: 50px;
+            width: 282px;      
+            font-size: 18px; 
+        }
+        .main .main_nav .main_nav_search input[type=image]{
+           position: relative;
+           top: -83px;
+           left: 240px;
+        }
+
+        /* main 下拉菜单部分 */
+        .main_top{
+            width: 1226px;
+            height: 460px;
+            margin: 0 auto;  
+            position: relative;
+            overflow: hidden;       
+          
+        }
+        .main_top .main_menu{
+            width: 235px;
+            height: 460px;
+            background-color: rgba(150, 160, 165, 0.5);   
+            position: absolute;
+            z-index: 2;
+        }
+        
+        .main_top .main_menu li{
+            width: 195px;
+            height: 46px;
+            font-size: 18px;
+            line-height: 46px;
+            list-style-type: none;
+            color: #fff;
+            cursor: pointer;
+        }
+        .main_top .main_menu .main_menu_list{
+            padding-left: 40px;
+        }
+
+
+        /* 下拉菜单框 */
+
+        .main_top .main_menu .main_menu_list .main_menu_li ul{
+            width: 195px;
+            height: 460px;
+            position:absolute; 
+            left: 220px;
+            top: 0px;
+            display: none;
+            background-color: rgb(141, 140, 140);
+        }       
+
+        .main_top  #main_switch{  
+            width: 8582px;
+            height: 460px;  
+            z-index: 1;
+            position: absolute;   
+          
+        }
+        .main_top  #main_switch img{
+            float: left;
+        }
+       
+
+        .main_top #buttons{
+            width: 140px;
+            height: 10px;
+            display: flex;
+            justify-content: space-around;
+            position: absolute;
+            z-index: 4;
+            bottom:20px;
+            right: 500px;
+           
+        }
+        .main_top #buttons span{
+            width: 10px;
+            height: 10px;
+            border-radius: 10px;
+            border: 1px solid rgb(196, 193, 193);
+        }
+        .main_top .pre{
+            width: 40px;
+            height: 40px;
+            font-size: 39px;
+            line-height: 40px;
+            position: absolute;
+            font-weight: bold;
+            top: 230px;
+            z-index: 2;     
+            background-color: rgba(150, 160, 165, 0.3);
+            display: none;
+        }
+        /*已使用js解决*/
+        /* .main_top:hover .pre{
+            display: block;
+        } */
+        
+        .main_top .pre:hover{
+            background-color: rgba(150, 160, 165, 0.7);
+        }
+        #left{
+            left: 260px;
+        }
+        #right{
+            right: 30px;
+        }
+        .on{
+            background-color: orange;
+        }
+
+        /* 鼠标移入改变背景色 */
+        .main_top .main_menu li:hover{
+            background: #fe6900;
+        }
+    </style> 
+
+
+
+    <script>
+        window.onload=function(){
+            var oLi=document.getElementsByClassName('main_menu_list');
+            var oTop=document.getElementsByClassName('main_top')[0];
+            var oPrev=document.getElementById('prev');
+            var oPre=document.getElementsByClassName('pre');
+            var oImg=document.getElementById('main_switch');
+            var oBtn=document.getElementById('buttons').getElementsByTagName('span');
+            var oLeft=document.getElementById('left');
+            var oRight=document.getElementById('right');
+            var cindex=1;
+            var timer;
+            oPrev.onmouseover=function(){
+                for(var i=0;i<oPre.length;i++)
+                oPre[i].style.display='block';
+            }
+            oPrev.onmouseout=function(){
+                for(var i=0;i<oPre.length;i++)
+                oPre[i].style.display='none';
+            }
+
+            for(var i=0;i<oLi.length;i++){
+          
+                oLi[i].onmouseover=function(){
+                   var oUl=this.getElementsByTagName('ul')[0];
+                   oUl.style.display='block';
+                //    this.className='active';
+                }
+                oLi[i].onmouseout=function(){
+                   var oUl=this.getElementsByTagName('ul')[0];
+                   oUl.style.display='none';
+                //    this.className=' ';
+                }
+            }
+
+            //轮播图
+            
+            function showBtn(cindex){
+                for(var i=0;i<oBtn.length;i++){
+                    if(oBtn[i].className=='on'){
+                        oBtn[i].className='';
+                    }
+                    oBtn[cindex-1].className='on';
+                }
+            }
+
+            function offset(num){
+                oImg.style.left=parseInt(oImg.style.left)+num+'px';
+                if(oImg.offsetLeft<-6130){
+                    oImg.style.left=-1226+'px';
+                }
+                if(oImg.offsetLeft>-1226){
+                    oImg.style.left=-6130+'px';
+                }
+            }
+            //左
+            oLeft.onclick=function(){
+                offset(1226);
+                if(cindex<=1){
+                    cindex=5;
+                } 
+                else{
+                     cindex-=1; 
+                } 
+                showBtn(cindex);
+            }
+            //右
+            oRight.onclick=function(){
+                if(cindex>=5){
+                    cindex=1;
+                } 
+                else{
+                     cindex+=1; 
+                } 
+                showBtn(cindex);
+                offset(-1226); 
+            }
+            //圆点事件
+            for(var i=0;i<oBtn.length;i++){
+                oBtn[i].index=i;
+                oBtn[i].onclick=function(){
+                    if(this.className=='on'){
+                        return;
+                    }
+                    oImg.style.left=parseInt(oImg.style.left)-1226*(this.index+1-cindex)+'px';
+                    cindex=this.index+1;
+                    showBtn(this.index+1);
+                }
+            }
+            //自动播放
+            function play(){
+                timer=setInterval(function(){
+                    oRight.onclick();
+                },1500);
+            }
+            //移入停止
+            function stop(){
+                oTop.onmouseover=function(){
+                    clearInterval(timer);
+                }
+            }
+            function start(){
+                oTop.onmouseout=function(){
+                   play();
+                }
+            }
+            play();
+            start();
+            stop();
+        }
+    </script>
+</head>
+<body>
+    <!-- 导航部分 -->
+    <div class="header">
+        <div class="header_nav">
+            <div class="header_nav_left">
+                <ul>
+                    <li>小米商城</li>
+                    <li>MIUI</li>
+                    <li>loT</li>
+                    <li>云服务</li>
+                    <li>水滴</li>
+                    <li>金融</li>
+                    <li>有品</li>
+                    <li>Select Region</li>
+                </ul>
+            </div>
+            <div class="header_nav_right">
+                <div class="right_ul">
+                    <ul>
+                        <li>登录</li>
+                        <li>注册</li>
+                        <li>消息通知</li>
+                    </ul>
+                </div>
+                <div class="right_shopTrolley">
+                    <img src="images/cart.jpg"/>
+                    <span>购物车(0)</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 主体部分 -->
+    <div class="main">
+        <!-- main导航部分 -->
+        <div class="main_nav">
+            <div class="main_nav_img">
+                <img src="images/mi_logo.JPG" alt=""/>
+            </div>
+            <div class="main_nav_list">
+                <ul>
+                    <li>小米手机</li>
+                    <li>红米</li>
+                    <li>电视</li>
+                    <li>笔记本</li>
+                    <li>盒子</li>
+                    <li>新品</li>
+                    <li>路由器</li>
+                    <li>智能硬件</li>
+                    <li>服务</li>
+                    <li>社区</li>
+                </ul>
+            </div>
+            <div class="main_nav_search">
+                <input type="text" placeholder="小米手机 小米电视"/>
+                <input type="image" src="images/search.jpg"/>
+            </div>
+        </div>
+    </div>
+        <!-- main 下拉菜单部分 -->
+        <div class="main_top">
+            <div class="main_menu">
+                <ul>
+                    <li class="main_menu_list">手机 电话卡
+                        <div class="main_menu_li">
+                            <ul>
+                                <li>eqweweqwe</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="main_menu_list">电视 盒子
+                            <div class="main_menu_li">
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </div>
+                    </li>
+                    <li class="main_menu_list">笔记本
+                            <div class="main_menu_li">
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </div>
+                    </li>
+                    <li class="main_menu_list">智能家电
+                            <div class="main_menu_li">
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </div>
+                    </li>
+                    <li class="main_menu_list">健康家具
+                            <div class="main_menu_li">
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </div>
+                    </li>
+                    <li class="main_menu_list">出行儿童
+                            <div class="main_menu_li">
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </div>
+                    </li>
+                    <li class="main_menu_list">路由器 手机配件
+                            <div class="main_menu_li">
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </div>
+                    </li>
+                    <li class="main_menu_list">移动电源 插线板
+                            <div class="main_menu_li">
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </div>
+                    </li>
+                    <li class="main_menu_list">耳机 音箱
+                            <div class="main_menu_li">
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </div>
+                    </li>
+                    <li class="main_menu_list">生活 米兔
+                            <div class="main_menu_li">
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </div>
+                    </li>
+                </ul>
+            </div>  
+            <div id="prev">
+                <div id="main_switch" style="left:-1226px">  
+                    <img src="images/mi_header5.jpg" />
+                    <img src="images/mi_header1.jpg" />
+                    <img src="images/mi_header2.jpg" />
+                    <img src="images/mi_header3.jpg" /> 
+                    <img src="images/mi_header4.jpg" /> 
+                    <img src="images/mi_header5.jpg" />
+                    <img src="images/mi_header1.jpg" />
+               </div> 
+               <div id="buttons">
+                   <span class="on"></span>
+                   <span></span>
+                   <span></span>
+                   <span></span>
+                   <span></span>
+               </div> 
+               <a href="#" class="pre" id="left">&lt;</a>
+               <a href="#" class="pre" id="right">&gt;</a>
+            </div>
+        </div>
+   
+</body>
+</html>

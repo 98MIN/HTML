@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+        
+       
+    <style>
+        input{
+            width: 130px;
+            height: 50px;
+        }
+        div{
+            margin-top: 1px;
+            width: 396px;
+            height: 300px;
+            border: 1px solid rgb(204, 247, 255);
+            display: none;
+        }
+        .active{
+            background-color: chocolate;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+
+          
+           var IDiv=document.getElementsByTagName('input');
+            var Div=document.getElementsByTagName('div');
+           
+                for(var i=0;i<IDiv.length;i++){      
+                        IDiv[i].index=i;
+                        IDiv[i].onclick=function(){    
+                            for(var j=0;j<IDiv.length;j++){
+                                IDiv[j].className=' ';
+                                 Div[j].style.display='none';
+                            }
+                        Div[this.index].style.display='block';
+                        this.className='active ';
+                }
+            } 
+        }
+    </script>
+</head>
+<body>     
+       <input type="button" class="active" value="妙味课堂" />  
+       <input type="button" value="妙味茶馆" /> 
+       <input type="button" value=" javaScript经典教程" /> 
+           
+               
+    <div style="display:block">
+        1asdddddddddddddd
+    </div>
+    <div>
+       2drererer
+    </div>
+    <div>
+        3frerwerwer
+    </div>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>无缝滚动</title>
+    <style>
+        #roll{
+            width: 800px;
+            height: 150px;
+            margin: 0 auto;
+        }
+        .warp{
+           width: 600px;
+           height: 150px;
+           margin: 0 auto;
+           border: 1px solid black; 
+           position: relative;
+           overflow: hidden; 
+       
+        }
+        .warp ul{
+            position: absolute;
+            margin: 0;
+            left: 0;
+            padding: 0;
+        }
+        .warp ul li{
+            float: left;
+            list-style-type: none;
+            width: 200px;
+            height: 150px;
+            text-align: center;
+        }
+        .btn_left{
+            float: left;
+            margin-top: 60px;
+        }
+        .btn_right{
+            float: right;
+            margin-top: 60px;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var speed;
+            var ODiv=document.getElementById('roll');
+            var OUl=ODiv.getElementsByTagName('ul')[0];
+            var OLi=OUl.getElementsByTagName('li');
+            var Btn=ODiv.getElementsByTagName('a');
+            
+            OUl.innerHTML+=OUl.innerHTML;
+            OUl.style.width=OLi[0].offsetWidth*OLi.length+'px';
+
+            setInterval(function(){
+                OUl.style.left=OUl.offsetLeft-speed+'px';
+                if(OUl.offsetLeft<-OUl.offsetWidth/2){
+                    OUl.style.left='0px';
+                }
+                else if(OUl.offsetLeft>0){
+                    OUl.style.left=-OUl.offsetWidth/2+'px';
+                }
+            },30);
+            Btn[0].onclick=function(){
+                speed=5;
+            }
+            Btn[1].onclick=function(){
+                speed=-5;
+            }
+        }
+    </script>
+</head>
+<body>
+   
+<div id="roll">
+            <a>
+                <img src="images/left.png" class="btn_left"/>
+            </a>
+            <a>
+                <img src="images/right.jpg" class="btn_right"/>
+            </a>
+    <div class="warp">
+        <ul>
+            <li><img src="images/1.jpg"/></li>
+            <li><img src="images/2.jpg"/></li>
+            <li><img src="images/3.jpg"/></li>
+            <li><img src="images/4.jpg"/></li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

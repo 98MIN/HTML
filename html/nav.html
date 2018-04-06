@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>导航条</title>
+
+    <style>
+        li{
+            list-style-type: none;
+            cursor: pointer;
+        }
+        a:link{
+            text-decoration: none;
+        }
+        a:hover{
+            text-decoration: underline;
+        }
+        #nav{
+            width: 480px;
+            height: 35px;
+            background: pink;
+            margin: 0 auto;
+            position: relative; 
+        }
+        .nav_ul{
+            width: 460px;
+            height: 35px;
+            background: pink;
+        }
+        .nav_li{
+            position: relative;
+            float: left;
+            width: 110px;
+            /* padding-left: 20px; */
+            line-height: 35px;
+            font-weight: bold;
+        }
+        .list{
+            width: 130px;
+            height: 140px;
+            margin: 0;
+            position: absolute;
+            padding: 0;
+            left: -40px;
+            display: none;
+        }
+        .list_ul{
+            width: 130px;
+            height: 140px;
+            background: pink;
+        }
+        .list_li{
+            width: 130px;
+            height: 35px;
+            line-height: 35px;
+            /* padding-left: 20px; */
+            /* line-height: 35px; */
+            font-weight: bold;
+            position: relative;
+            
+
+        }
+        .child_ul{
+            width: 130px;
+            height: 140px;
+            position: absolute;
+            margin-left: 30px;
+            top: -1px;
+            left: 60px;
+            background: pink;
+            z-index: 2;
+            padding: 0;
+            display: none;
+        } 
+        .child_li{ 
+            height: 35px;
+            line-height: 35px; 
+            width: 120px;
+            padding-left: 20px;
+            line-height: 35px;
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var oNav=document.getElementById('nav');
+            var oLi=oNav.getElementsByTagName('li');
+            for(var i=0;i<oLi.length;i++){
+                if(oLi[i].className=='nav_li'){
+                    oLi[i].onmouseover=function(){
+                        var oDiv=this.getElementsByTagName('div')[0];
+                        oDiv.style.display='block';
+                        
+                    }
+                    oLi[i].onmouseout=function(){
+                        var oDiv=this.getElementsByTagName('div')[0];
+                        oDiv.style.display='none';
+                    } 
+                }
+                else if(oLi[i].className=='list_li'){
+                        oLi[i].onmouseover=function(){
+                            var oUl=this.getElementsByTagName('ul')[0];
+                            oUl.style.display='block';
+                        }
+                        oLi[i].onmouseout=function(){
+                            var oUl=this.getElementsByTagName('ul')[0];
+                            oUl.style.display='none';
+                        }
+                    }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="nav">
+        <ul class="nav_ul"> 
+            <li class="nav_li">
+                妙味课堂
+                <div class="list">
+                    <ul class="list_ul">
+                        <li class="list_li">
+                            <a>妙味官网</a>
+                            <ul class="child_ul">
+                                <li>妙味公告</li>
+                                <li>学员作品展示</li>
+                                <li>技术交流</li>
+                                <li>妙味照片墙</li>
+                            </ul>
+                        </li>
+                        <li class="list_li">远程课堂
+                                <ul class="child_ul">
+                                    <li>妙味公告</li>
+                                    <li>学员作品展示</li>
+                                    <li>技术交流</li>
+                                    <li>妙味照片墙</li>
+                                </ul>
+                        </li>
+                        <li class="list_li">课后练习
+                                <ul class="child_ul">
+                                    <li>妙味公告</li>
+                                    <li>学员作品展示</li>
+                                    <li>技术交流</li>
+                                    <li>妙味照片墙</li>
+                                </ul>
+                        </li>
+                        <li class="list_li">面试题
+                                <ul class="child_ul">
+                                    <li>妙味公告</li>
+                                    <li>学员作品展示</li>
+                                    <li>技术交流</li>
+                                    <li>妙味照片墙</li>
+                                </ul>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+
+            <li class="nav_li">
+                妙味茶馆
+                <div class="list">
+                        <ul class="list_ul">
+                            <li class="list_li">妙味官网
+                                <ul class="child_ul">
+                                    <li>妙味公告</li>
+                                    <li>学员作品展示</li>
+                                    <li>技术交流</li>
+                                    <li>妙味照片墙</li>
+                                </ul>
+                            </li>
+                            <li class="list_li">远程课堂
+                                    <ul class="child_ul">
+                                        <li>妙味公告</li>
+                                        <li>学员作品展示</li>
+                                        <li>技术交流</li>
+                                        <li>妙味照片墙</li>
+                                    </ul>
+                            </li>
+                            <li class="list_li">课后练习
+                                    <ul class="child_ul">
+                                        <li>妙味公告</li>
+                                        <li>学员作品展示</li>
+                                        <li>技术交流</li>
+                                        <li>妙味照片墙</li>
+                                    </ul>
+                            </li>
+                            <li class="list_li">面试题
+                                    <ul class="child_ul">
+                                        <li>妙味公告</li>
+                                        <li>学员作品展示</li>
+                                        <li>技术交流</li>
+                                        <li>妙味照片墙</li>
+                                    </ul>
+                            </li>
+                        </ul>
+                    </div>
+            </li>
+
+            <li class="nav_li">
+                产品介绍
+                <div class="list">
+                        <ul class="list_ul">
+                            <li class="list_li">妙味官网
+                                <ul class="child_ul">
+                                    <li>妙味公告</li>
+                                    <li>学员作品展示</li>
+                                    <li>技术交流</li>
+                                    <li>妙味照片墙</li>
+                                </ul>
+                            </li>
+                            <li class="list_li">远程课堂
+                                    <ul class="child_ul">
+                                        <li>妙味公告</li>
+                                        <li>学员作品展示</li>
+                                        <li>技术交流</li>
+                                        <li>妙味照片墙</li>
+                                    </ul>
+                            </li>
+                            <li class="list_li">课后练习
+                                    <ul class="child_ul">
+                                        <li>妙味公告</li>
+                                        <li>学员作品展示</li>
+                                        <li>技术交流</li>
+                                        <li>妙味照片墙</li>
+                                    </ul>
+                            </li>
+                            <li class="list_li">面试题
+                                    <ul class="child_ul">
+                                        <li>妙味公告</li>
+                                        <li>学员作品展示</li>
+                                        <li>技术交流</li>
+                                        <li>妙味照片墙</li>
+                                    </ul>
+                            </li>
+                        </ul>
+                    </div>
+            </li>
+
+            <li class="nav_li">
+                联系我们
+                <div class="list">
+                        <ul class="list_ul">
+                            <li class="list_li">妙味官网
+                                <ul class="child_ul">
+                                    <li>妙味公告</li>
+                                    <li>学员作品展示</li>
+                                    <li>技术交流</li>
+                                    <li>妙味照片墙</li>
+                                </ul>
+                            </li>
+                            <li class="list_li">远程课堂
+                                    <ul class="child_ul">
+                                        <li>妙味公告</li>
+                                        <li>学员作品展示</li>
+                                        <li>技术交流</li>
+                                        <li>妙味照片墙</li>
+                                    </ul>
+                            </li>
+                            <li class="list_li">课后练习
+                                    <ul class="child_ul">
+                                        <li>妙味公告</li>
+                                        <li>学员作品展示</li>
+                                        <li>技术交流</li>
+                                        <li>妙味照片墙</li>
+                                    </ul>
+                            </li>
+                            <li class="list_li">面试题
+                                    <ul class="child_ul">
+                                        <li>妙味公告</li>
+                                        <li>学员作品展示</li>
+                                        <li>技术交流</li>
+                                        <li>妙味照片墙</li>
+                                    </ul>
+                            </li>
+                        </ul>
+                    </div>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

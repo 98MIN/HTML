@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>图片旋转</title>
+    <style>
+        body{
+            background: black;
+        }
+        #perspective{
+            width: 200px;
+            height: 200px;
+            margin: 200px auto;
+            
+        }
+        #warp{
+            position: relative;
+            height: 200px;
+            width: 200px;
+            transform-style:preserve-3d;
+            transform:rotateX(-25deg) rotateY(0deg);
+           
+        }
+        #warp img{
+            /* width: 200px;
+            height: 200px; */
+            position: absolute;
+            border-radius: 15px;
+            /* padding: 0 20px; */
+            
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var oImg=document.getElementsByTagName('img');
+            var deg=360/(oImg.length);
+             Array.prototype.forEach.call(oImg,function(el,index,self){
+                el.style.transform=" rotateY("+deg*index+"deg) translateZ(500px)";
+                el.style.transition="1s  "+(oImg.length-index)*0.1+"s ";
+        });
+        }
+    </script>
+</head>
+<body>
+    <div id="perspective">
+        <div id="warp">
+            <img src="images/mouse.jpg" alt="鼠"/>
+            <img src="images/cow.jpg" alt="牛"/>
+            <img src="images/tiger.jpg" alt="虎"/>
+            <img src="images/rabbit.jpg" alt="兔"/>
+            <img src="images/dragon.jpg" alt="龙"/>
+            <img src="images/snake.jpg" alt="蛇"/>
+            <img src="images/horse.jpg" alt="马"/>
+            <img src="images/sheep.jpg" alt="羊"/>
+            <img src="images/monkey.jpg" alt="猴"/>
+            <img src="images/chicken.jpg" alt="鸡"/>
+            <img src="images/dog.jpg" alt="狗"/>
+            <img src="images/pig.jpg" alt="猪"/>
+        </div>
+    </div>
+
+  
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>图片切换</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+        }
+        body{
+            padding: 20px;
+        }
+        #contain{
+            position: relative;
+            width: 600px;
+            height: 337px;
+            border: 3px solid #ccc;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+        #list{
+            position: absolute;
+            z-index: 1;
+            width: 3000px;
+            height: 337px;
+        }
+        #list img{
+            float: left;
+            width: 600px;
+            height: 337px;
+        }
+        #buttons{
+            position: absolute;
+            z-index: 2;
+            width: 130px;
+            height: 10px;
+            top: 300px;
+            left: 450px;
+        }
+        #buttons li{
+            float: left;
+            font-size: 20px;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var oContain=document.getElementById('contain');
+            var oList=document.getElementById('list');
+            var oImg=document.getElementsByTagName('img');
+       
+            var oLi=document.getElementsByTagName('li');
+
+            for(var i=0;i<oLi.length;i++){
+                oLi[i].index=i;
+                oLi[i].onclick=function(){
+                    oList.style.left=parseInt(oList.style.left)-600*(this.index)+'px';      
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="contain">
+        <div id="list" style="left:-600px">
+        <img  src="images/IS1.jpg"/>
+        <img  src="images/IS1.jpg"/>
+        <img  src="images/IS2.jpg"/>
+        <img  src="images/IS3.jpg"/>
+        <img  src="images/IS4.jpg"/>
+        </div>
+        <div id="buttons">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </div>
+    </div> 
+</body>
+</html>

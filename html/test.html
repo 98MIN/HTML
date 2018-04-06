@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+<style>
+ 
+div{
+    height: 100px;
+    width: 100px;
+    top:100px;
+    left:200px;
+    position: absolute;
+    background-color: red;
+}
+</style>
+
+
+
+</head>
+<body>
+<textarea rows="40" cols="20" id="txt1"></textarea>
+<input type="text" id="txt2"/>
+<input type="button" id="btn" value="提交"/>
+<script>
+    window.onload=function(){
+      
+       var oTxt1=document.getElementById('txt1');
+            var oTxt2=document.getElementById('txt2');
+            var oBtn=document.getElementById('btn');
+     
+       oTxt2.onkeydown=function(ev){ 
+            
+            if(ev.ctrlKey&&ev.keyCode==13){ 
+                oTxt1.value+=oTxt2.value+'\n';
+                oTxt2.value=''; 
+            }
+           
+        }
+    }
+ 
+</script>
+</body>
+</html>

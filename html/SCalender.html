@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>简易日历</title>
+    <style>
+        #SC{
+            margin: 50px 0px 0 550px;
+            width: 320px;
+            height: 650px;
+            padding-left: 10px;
+            border: lightslategrey 1px solid;
+        }
+        input[type=button]{
+            width: 100px;
+            height: 100px;
+           margin-top: 10px;
+           font-size: 20px;
+           font-weight: bold;
+        }
+        h1{
+            text-align: center;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var OBtn=document.getElementsByTagName('input');
+            var ODiv=document.getElementById('item');
+            // var arr=new Array();
+            arr=[
+                '快过年了，大家快去玩吧~',
+                '年已经过了，该收收心学习了~',
+                '开学了，刺激',
+                '快过年了，大家快去玩吧~',
+                '年已经过了，该收收心学习了~',
+                '开学了，刺激',
+                '快过年了，大家快去玩吧~',
+                '年已经过了，该收收心学习了~',
+                '开学了，刺激',
+                '快过年了，大家快去玩吧~',
+                '年已经过了，该收收心学习了~',
+                '开学了，刺激',
+            ]
+
+            for(var i=0;i<OBtn.length;i++){
+                OBtn[i].index=i;
+                OBtn[i].onclick=function(){
+                    ODiv.innerHTML='<h2>'+(this.index+1)+'月活动</h2><p>'+arr[this.index]+'</p>';
+                }   
+            }
+           
+        }
+    </script>
+</head>
+<body>
+    <div id="SC">
+        <h1>Simple Calender</h1>
+        <input type="button" value="1月"/>
+        <input type="button" value="2月"/>
+        <input type="button" value="3月"/>
+        <input type="button" value="4月"/>
+        <input type="button" value="5月"/>
+        <input type="button" value="6月"/>
+        <input type="button" value="7月"/>
+        <input type="button" value="8月"/>
+        <input type="button" value="9月"/>
+        <input type="button" value="10月"/>
+        <input type="button" value="11月"/>
+        <input type="button" value="12月"/>  
+        <div id="item">
+            <h2>1月活动</h2>
+            <p>快过年了，大家快去玩吧~</p>
+        </div>
+    </div>  
+</body>
+</html>

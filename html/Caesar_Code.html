@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>凯撒密码</title>
+
+    <style>
+       div{
+           margin: 10% 30% ;
+           padding: 20px 20px 30px 80px;
+           width: 400px;
+           border: cadetblue 1px solid;
+       }
+        input[type=text]{
+            width: 200px;
+            height: 30px;
+            border: 1px solid #ccc;
+            margin: 10px 10px 0 0;
+            
+        }
+        input[type=button]{
+            width: 60px;
+            height: 30px;
+            font-size: 15px;
+        }
+    </style>
+
+    <script>
+        window.onload=function(){
+            var s;
+            var str;
+            var sum="";
+            var Plain=document.getElementById('plain');
+            var Key=document.getElementById('key');
+            var Cip=document.getElementById('cip');
+            var Btn=document.getElementById('btn');
+            var x;
+            var count;
+           
+            var A=[];
+            for(i=97;i<123;i++){
+                A.push(String.fromCharCode(i));
+            }
+            Btn.onclick=function(){ 
+                x=parseInt(Key.value);
+                s=Plain.value;
+                for(var i=0;i<s.length;i++){
+                    str=s.substring(i,i+1); 
+                    if(str==" "){
+                            sum=sum+" ";
+                        }
+                    for(var j=0;j<A.length;j++){
+                        if(str==A[j]){
+                            count=j+x;
+                            sum=sum+A[count];                       
+                        }
+                       
+                    }
+                }
+                Cip.value=sum;
+            }
+        }
+    </script>
+
+</head>
+<body>
+    <div>
+        <label>明文：<input type="text" id="plain"/></label><br/>
+        <label>密钥：<input type="text" id="key"/><input type="button" value="加密" id="btn"/></label><br/>
+        <label>密文：<input type="text" id="cip"/></label>
+    </div>
+</body>
+</html>

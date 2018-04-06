@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>跑马灯效果</title>
+    <style>
+        #marquee{
+            width: 300px;
+            height: 300px;
+            left:0;
+
+            font-size: 30px;
+            position: absolute;
+        }
+    </style>
+    <script>
+
+        window.onload=function(){ 
+            var arr=['red','green','yellow','pink','black'];
+             var oMarquee=document.getElementById('marquee');
+            var oBtn=document.getElementById('btn');
+            oBtn.onclick=function(){
+                var i=0;
+                setInterval(function(){
+                    oMarquee.style.color=arr[i];
+                    if(i<arr.length-1){
+                        i++;
+                    }
+                    else if(i==arr.length-1){
+                        i=0;
+                    }
+                    oMarquee.style.left=oMarquee.offsetLeft+10+'px';
+                    if(oMarquee.offsetLeft>1000){
+                        oMarquee.style.left='0px';
+                    }  
+                },100)  
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <pre id="marquee">
+        去年今日此门中，<br/>
+        人面桃花相映红。<br/>
+        人面不知何处去，<br/>
+        桃花依旧笑春风。
+    </pre>
+    <input type="button" id="btn" value="Change"/>
+</body>
+</html>
